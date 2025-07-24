@@ -16,10 +16,22 @@
       color: #ff4081;
     }
     .question {
-      margin: 20px 0;
+      margin: 20px 0 5px;
       font-weight: bold;
     }
-    .cake, .gift, .message, .answers, .photos, .audio {
+    .answer-box {
+      margin-bottom: 20px;
+    }
+    .answer-box textarea {
+      width: 90%;
+      max-width: 600px;
+      height: 60px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .cake, .gift, .message, .answers, .photos {
       margin-top: 40px;
     }
     .cake img, .photos img, .gift img {
@@ -45,6 +57,10 @@
     .gift {
       font-size: 1.2rem;
       line-height: 1.6;
+      display: none;
+    }
+    .message {
+      display: none;
     }
     .emoji {
       font-size: 1.5rem;
@@ -59,15 +75,28 @@
         answersDiv.style.display = 'none';
       }
     }
+
+    function blowCandle() {
+      document.querySelector('.cake').style.display = 'none';
+      document.querySelector('.message').style.display = 'block';
+      document.querySelector('.gift').style.display = 'block';
+    }
   </script>
 </head>
 <body>
   <h1>To My Love, Aaradhya ❤️</h1>
 
   <div class="question">1) Who am I to you?</div>
+  <div class="answer-box"><textarea placeholder="Type your answer here..."></textarea></div>
+
   <div class="question">2) Tumhe hamara sath achha lagta hai ya bura?</div>
+  <div class="answer-box"><textarea placeholder="Type your answer here..."></textarea></div>
+
   <div class="question">3) Ek aisi wajah jo agar main karun to tum mujhe chhod dogi?</div>
+  <div class="answer-box"><textarea placeholder="Type your answer here..."></textarea></div>
+
   <div class="question">4) Aisa kya reason hai jo tumhe lagta hai agar tum change nahi karogi to main tumhe chhod dunga?</div>
+  <div class="answer-box"><textarea placeholder="Type your answer here..."></textarea></div>
 
   <button onclick="toggleAnswers()">💬 Answer Dekhne ke liye Click Karo</button>
 
@@ -78,6 +107,7 @@
   <div class="cake">
     <img src="cake.jpg" alt="Birthday Cake">
     <p>🎂 Blow the candle and make a wish!</p>
+    <button onclick="blowCandle()">🕯️ Blow Candle</button>
   </div>
 
   <div class="message">
@@ -89,18 +119,10 @@
   </div>
 
   <div class="photos">
-    <h3>📸 Our Cute Moments</h3>
+    <h3>📸 My Girl</h3>
     <img src="119cff01-e26e-4d40-b4d8-9a114fbbaf21.jpg" alt="Photo 1">
     <img src="26f0903b-b5cf-43c2-8cbd-67d5707d3ed7.jpg" alt="Photo 2">
     <img src="4b7dd243-7129-4b51-a3c1-5c25621af080.jpg" alt="Photo 3">
-  </div>
-
-  <div class="audio">
-    <h3>🎵 Your Song is Playing 🎵</h3>
-    <audio controls>
-      <source src="https://www.youtube.com/watch?v=yyUodifWNxU" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
   </div>
 
   <div class="gift">
@@ -112,5 +134,6 @@
   </div>
 </body>
 </html>
+
 
     
