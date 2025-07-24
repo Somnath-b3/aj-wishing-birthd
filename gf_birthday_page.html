@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Aaradhya</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      padding: 50px;
+    }
+    .question-box, .cake-box, .wish-box, .gallery, .final {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background-color: #ff6f61;
+      color: white;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="q1" class="question-box active">
+      <h2>Q1: Who am I to you?</h2>
+      <button onclick="nextQuestion('q2')">Mera Sab Kuch</button>
+      <button>Khaas Dost</button>
+      <button>Acquaintance</button>
+    </div>
+
+    <div id="q2" class="question-box">
+      <h2>Q2: Tumhe humara life aana kaisa lagta hai?</h2>
+      <button onclick="nextQuestion('q3')">Sabse Achha</button>
+      <button>Thik Thak</button>
+      <button>Thoda Confusing</button>
+    </div>
+
+    <div id="q3" class="question-box">
+      <h2>Q3: Ek aisi wajah jo tumhe lage ki main tumhe chhod sakta hoon?</h2>
+      <button onclick="nextQuestion('q4')">Agar Tum Jhoot Bolo</button>
+      <button>Mujhe Ignore Karo</button>
+      <button>Trust Break Ho</button>
+    </div>
+
+    <div id="q4" class="question-box">
+      <h2>Q4: Aisi kya wajah hai jo agar tum nahi badlogi to main tumhe chhod dunga?</h2>
+      <button onclick="showCake()">Gussa Karna</button>
+      <button>Ziddi Nature</button>
+      <button>Bina Baat Ke Mood Off</button>
+    </div>
+
+    <div id="cake" class="cake-box">
+      <h2>🎂 Here's your cake!</h2>
+      <img src="https://i.imgur.com/RKdszjM.png" alt="Cake">
+      <br>
+      <button onclick="blowCandle()">Blow the Candle 🎉</button>
+    </div>
+
+    <div id="wish" class="wish-box">
+      <h2>💌 Happy Birthday, Aaradhya!</h2>
+      <p>From being my best friend to my heartbeat – you’re my forever. <br>
+      Happy Birthday, my jaan. You deserve the world.<br><br>
+      ❤️ Forever yours, Jeet</p>
+    </div>
+
+    <div id="gallery" class="gallery">
+      <h2>📸 Memories with You</h2>
+      <img src="/mnt/data/119cff01-e26e-4d40-b4d8-9a114fbbaf21.jpg">
+      <img src="/mnt/data/26f0903b-b5cf-43c2-8cbd-67d5707d3ed7.jpg">
+      <img src="/mnt/data/4b7dd243-7129-4b51-a3c1-5c25621af080.jpg">
+    </div>
+
+    <div id="final" class="final">
+      <audio controls autoplay>
+        <source src="https://example.com/jugrafiya.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <script>
+    function nextQuestion(id) {
+      document.querySelectorAll('.question-box').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function showCake() {
+      document.querySelectorAll('.question-box').forEach(el => el.classList.remove('active'));
+      document.getElementById('cake').classList.add('active');
+    }
+
+    function blowCandle() {
+      document.getElementById('cake').classList.remove('active');
+      document.getElementById('wish').classList.add('active');
+      setTimeout(() => {
+        document.getElementById('wish').classList.remove('active');
+        document.getElementById('gallery').classList.add('active');
+        setTimeout(() => {
+          document.getElementById('gallery').classList.remove('active');
+          document.getElementById('final').classList.add('active');
+        }, 5000);
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
