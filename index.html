@@ -3,123 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Aaradhya</title>
+  <title>Birthday Surprise for Aaradhya</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f0;
       text-align: center;
-      overflow: hidden;
+      padding: 20px;
+      color: #333;
     }
-    .container {
-      padding: 50px;
+    h1 {
+      color: #ff4081;
     }
-    .question-box, .cake-box, .wish-box, .gallery, .final {
-      display: none;
+    .question {
+      margin: 20px 0;
+      font-weight: bold;
     }
-    .active {
-      display: block;
+    .cake, .gift, .message, .answers, .photos, .audio {
+      margin-top: 40px;
     }
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 18px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background-color: #ff6f61;
-      color: white;
-    }
-    img {
+    .cake img, .photos img, .gift img {
       max-width: 300px;
       border-radius: 12px;
-      margin: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      background-color: #ff4081;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .answers {
+      display: none;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    .gift {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .emoji {
+      font-size: 1.5rem;
     }
   </style>
-</head>
-<body>
-  <div class="container">
-    <div id="q1" class="question-box active">
-      <h2>Q1: Who am I to you?</h2>
-      <button onclick="nextQuestion('q2')">Mera Sab Kuch</button>
-      <button>Khaas Dost</button>
-      <button>Acquaintance</button>
-    </div>
-
-    <div id="q2" class="question-box">
-      <h2>Q2: Tumhe humara life aana kaisa lagta hai?</h2>
-      <button onclick="nextQuestion('q3')">Sabse Achha</button>
-      <button>Thik Thak</button>
-      <button>Thoda Confusing</button>
-    </div>
-
-    <div id="q3" class="question-box">
-      <h2>Q3: Ek aisi wajah jo tumhe lage ki main tumhe chhod sakta hoon?</h2>
-      <button onclick="nextQuestion('q4')">Agar Tum Jhoot Bolo</button>
-      <button>Mujhe Ignore Karo</button>
-      <button>Trust Break Ho</button>
-    </div>
-
-    <div id="q4" class="question-box">
-      <h2>Q4: Aisi kya wajah hai jo agar tum nahi badlogi to main tumhe chhod dunga?</h2>
-      <button onclick="showCake()">Gussa Karna</button>
-      <button>Ziddi Nature</button>
-      <button>Bina Baat Ke Mood Off</button>
-    </div>
-
-    <div id="cake" class="cake-box">
-      <h2>🎂 Here's your cake!</h2>
-      <img src="https://i.imgur.com/RKdszjM.png" alt="Cake">
-      <br>
-      <button onclick="blowCandle()">Blow the Candle 🎉</button>
-    </div>
-
-    <div id="wish" class="wish-box">
-      <h2>💌 Happy Birthday, Aaradhya!</h2>
-      <p>From being my best friend to my heartbeat – you’re my forever. <br>
-      Happy Birthday, my jaan. You deserve the world.<br><br>
-      ❤️ Forever yours, Jeet</p>
-    </div>
-
-    <div id="gallery" class="gallery">
-      <h2>📸 Memories with You</h2>
-      <img src="/mnt/data/119cff01-e26e-4d40-b4d8-9a114fbbaf21.jpg">
-      <img src="/mnt/data/26f0903b-b5cf-43c2-8cbd-67d5707d3ed7.jpg">
-      <img src="/mnt/data/4b7dd243-7129-4b51-a3c1-5c25621af080.jpg">
-    </div>
-
-    <div id="final" class="final">
-      <audio controls autoplay>
-        <source src="https://example.com/jugrafiya.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-  </div>
-
   <script>
-    function nextQuestion(id) {
-      document.querySelectorAll('.question-box').forEach(el => el.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
-    function showCake() {
-      document.querySelectorAll('.question-box').forEach(el => el.classList.remove('active'));
-      document.getElementById('cake').classList.add('active');
-    }
-
-    function blowCandle() {
-      document.getElementById('cake').classList.remove('active');
-      document.getElementById('wish').classList.add('active');
-      setTimeout(() => {
-        document.getElementById('wish').classList.remove('active');
-        document.getElementById('gallery').classList.add('active');
-        setTimeout(() => {
-          document.getElementById('gallery').classList.remove('active');
-          document.getElementById('final').classList.add('active');
-        }, 5000);
-      }, 4000);
+    function toggleAnswers() {
+      const answersDiv = document.querySelector('.answers');
+      if (answersDiv.style.display === 'none' || answersDiv.style.display === '') {
+        answersDiv.style.display = 'block';
+      } else {
+        answersDiv.style.display = 'none';
+      }
     }
   </script>
+</head>
+<body>
+  <h1>To My Love, Aaradhya ❤️</h1>
+
+  <div class="question">1) Who am I to you?</div>
+  <div class="question">2) Tumhe hamara sath achha lagta hai ya bura?</div>
+  <div class="question">3) Ek aisi wajah jo agar main karun to tum mujhe chhod dogi?</div>
+  <div class="question">4) Aisa kya reason hai jo tumhe lagta hai agar tum change nahi karogi to main tumhe chhod dunga?</div>
+
+  <button onclick="toggleAnswers()">💬 Answer Dekhne ke liye Click Karo</button>
+
+  <div class="answers">
+    <p>(Answers appear here when you write them)</p>
+  </div>
+
+  <div class="cake">
+    <img src="cake.jpg" alt="Birthday Cake">
+    <p>🎂 Blow the candle and make a wish!</p>
+  </div>
+
+  <div class="message">
+    <h2>🎉 Happy Birthday My Love! 🎉</h2>
+    <p>Janamdin ki lakh-lakh shubhkamnayein meri jaan! 💖</p>
+    <p>Tum meri zindagi ki sabse pyaari daulat ho, jise har din aur bhi zyada chahne ka mann karta hai. 😘</p>
+    <p>Mujhe nahi pata duniya mein sabse khoobsurat cheez kya hai, par meri nazar mein wo sirf tum ho. 💞</p>
+    <p>Tumhara har ek smile mere liye ek nayi zindagi jaisa hota hai. 💋</p>
+  </div>
+
+  <div class="photos">
+    <h3>📸 Our Cute Moments</h3>
+    <img src="119cff01-e26e-4d40-b4d8-9a114fbbaf21.jpg" alt="Photo 1">
+    <img src="26f0903b-b5cf-43c2-8cbd-67d5707d3ed7.jpg" alt="Photo 2">
+    <img src="4b7dd243-7129-4b51-a3c1-5c25621af080.jpg" alt="Photo 3">
+  </div>
+
+  <div class="audio">
+    <h3>🎵 Your Song is Playing 🎵</h3>
+    <audio controls>
+      <source src="https://www.youtube.com/watch?v=yyUodifWNxU" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div class="gift">
+    <h3>🎁 Tumhara Gift 🎁</h3>
+    <p><span class="emoji">🍫💝💋😘</span></p>
+    <p>Jab tak tu mere sath hai, mujhe kisi aur gift ki zarurat nahi. Par fir bhi... yeh chhota sa page sirf tumhare liye. 🎀</p>
+    <p>Tum meri zindagi ka sabse khoobsurat hissa ho. Mera pyaar, meri jaan, meri duniya sab kuch. ❤️</p>
+    <p>Gift toh chhoti baat hai, main khud hi tumhara hoon! 😇</p>
+  </div>
 </body>
 </html>
+
+    
